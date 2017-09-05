@@ -1,0 +1,17 @@
+.cutePhoto {
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+}
+
+.header {
+    composes: textHeader from './typography.css';
+}
+
+.bodyCopy {
+    composes: textBody from './typography.css';
+}
+
+.subheader {
+    composes: textSubheader from './typography.css';
+}

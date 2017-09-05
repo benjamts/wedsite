@@ -1,0 +1,7 @@
+.footer {
+    background-color: lightgray;
+}
+
+.footerLinks {
+    composes: container from './base-page.css';
+}

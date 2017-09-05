@@ -1,0 +1,22 @@
+@value headerHeight 40px;
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.contents {
+    composes: container;
+    flex: 1 0 auto;
+}
+
+.page {
+    background-color: aqua;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding-top: headerHeight;
+}
