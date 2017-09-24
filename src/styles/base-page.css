@@ -1,22 +1,70 @@
-@value headerHeight 40px;
+@import './colors.css';
 
+:root {
+    --headerHeight: 3.6rem;
+    --animationSpeed: .25s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.backdrop {
+    display: none;
+}
 
 .container {
+    box-sizing: border-box;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 50rem;
 }
 
 .contents {
     composes: container;
+    background-color: white;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     flex: 1 0 auto;
+    padding: 2rem;
 }
 
 .page {
-    background-color: aqua;
     box-sizing: border-box;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     min-height: 100%;
-    padding-top: headerHeight;
+    padding-top: var(--headerHeight);
 }
+
+@media screen and (min-width: 50rem) {
+    .backdrop {
+        background-repeat: no-repeat;
+        background-position: 0 calc(var(--headerHeight) - 2px);
+        background-size: cover;
+        bottom: 0;
+        display: block;
+        filter: blur(0px);
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: scale(1) translateY(0);
+        transition: var(--animationSpeed) filter ease-in,
+                    var(--animationSpeed) -webkit-filter ease-in,
+                    var(--animationSpeed) transform ease-in;
+        z-index: -1;
+    }
+
+    .contents {
+        box-shadow: 0px 0px 10px rgba(35, 37, 53, .5);
+        padding-bottom: var(--headerHeight);
+        margin: 2rem auto;
+    }
+
+    .loadingImage {
+        filter: blur(10px);
+        transform: scale(1.02) translateY(-1%);
+    }
+}
+

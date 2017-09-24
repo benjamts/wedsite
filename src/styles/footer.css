@@ -1,7 +1,27 @@
+@import './colors.css';
+
 .footer {
-    background-color: lightgray;
+    background-color: #636265;
+    box-shadow: 0px -1px 10px rgba(35, 37, 53, .5);
 }
 
 .footerLinks {
     composes: container from './base-page.css';
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.link {
+    composes: textBold from './typography.css';
+    color: #FFF;
+    background-color: transparent;
+    flex: 0 1 auto;
+    text-decoration: none;
+}
+
+.link:focus,
+.link:hover,
+.link:active,
+.linkActive {
+    color: #232535;
 }

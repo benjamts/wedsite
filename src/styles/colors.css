@@ -1,10 +1,97 @@
-@value tylerColorDark #005B1C;
-@value tylerColor #0A6C28;
-@value tylerColorLight #549166;
+:root {
+    /* Whites */
 
-@value sarahColorDark #7A1100;
-@value sarahColor #921F0D;
-@value sarahColorLight #C47C71;
+    /* Tyler Primary */
+    --tylerPrimaryWhite0: #E2EAE2;
+    --tylerPrimaryWhite1: #A1D1A1;
+    --tylerPrimaryWhite2: #BCDDBC;
+    --tylerPrimaryWhite3: #BFCEBF;
+    --tylerPrimaryWhite4: #A8BAA8;
 
-@value tylerNeutral #6E8389;
-@value sarahNeutral #C49C71;
+    /* Tyler Secondary */
+    --tylerSecondaryWhite0: #CED6D6;
+    --tylerSecondaryWhite1: #7EA4A4;
+    --tylerSecondaryWhite2: #9FBBBB;
+    --tylerSecondaryWhite3: #929E9E;
+    --tylerSecondaryWhite4: #7E8C8C;
+
+    /* Sarah Primary */
+    --sarahPrimaryWhite0: #FFF6F6;
+    --sarahPrimaryWhite1: #FFC4C4;
+    --sarahPrimaryWhite2: #FFD9D9;
+    --sarahPrimaryWhite3: #FFECEC;
+    --sarahPrimaryWhite4: #E9D3D3;
+
+    /* Sarah Secondary */
+    --sarahSecondaryWhite0: #FFFAF6;
+    --sarahSecondaryWhite1: #FFDFC4;
+    --sarahSecondaryWhite2: #FFEAD9;
+    --sarahSecondaryWhite3: #FFF5EC;
+    --sarahSecondaryWhite4: #E9DDD3;
+
+
+    /* Grays */
+
+    /* Sarah primary color */
+    --sarahPrimaryGray0: #D3C6C6;
+    --sarahPrimaryGray1: #F9D5D5;
+    --sarahPrimaryGray2: #C3AEAE;
+    --sarahPrimaryGray3: #AF9393;
+    --sarahPrimaryGray4: #A07D7D;
+
+    /* Sarah secondary color */
+    --sarahSecondaryGray0: #D3CCC6;
+    --sarahSecondaryGray1: #F9E6D5;
+    --sarahSecondaryGray2: #C3B7AE;
+    --sarahSecondaryGray3: #AFA093;
+    --sarahSecondaryGray4: #A08D7D;
+
+    /* Tyler primary color */
+    --tylerPrimaryGray0: #9FA99F;
+    --tylerPrimaryGray1: #AAC7AA;
+    --tylerPrimaryGray2: #8B9C8B;
+    --tylerPrimaryGray3: #768C76;
+    --tylerPrimaryGray4: #648064;
+
+    /* Tyler secondary color */
+    --tylerSecondaryGray0: #777F7F;
+    --tylerSecondaryGray1: #809696;
+    --tylerSecondaryGray2: #687575;
+    --tylerSecondaryGray3: #586969;
+    --tylerSecondaryGray4: #4B6060;
+
+
+    /* Saturated colors */
+
+    /* Sarah primary color */
+    --sarahPrimary0: #360000;
+    --sarahPrimary1: #2A0000;
+    --sarahPrimary2: #460303;
+    --sarahPrimary3: #730000;
+    --sarahPrimary4: #A80000;
+
+    /* Sarah secondary color */
+    --sarahSecondary0: #361800;
+    --sarahSecondary1: #2A1300;
+    --sarahSecondary2: #462103;
+    --sarahSecondary3: #733400;
+    --sarahSecondary4: #A84C00;
+
+    /* Tyler primary color */
+    --tylerPrimary0: #002B00;
+    --tylerPrimary1: #002100;
+    --tylerPrimary2: #023802;
+    --tylerPrimary3: #005C00;
+    --tylerPrimary4: #008700;
+
+    /* Tyler secondary color */
+    --tylerSecondary0: #002020;
+    --tylerSecondary1: #001919;
+    --tylerSecondary2: #022A2A;
+    --tylerSecondary3: #004545;
+    --tylerSecondary4: #006565;
+
+
+    /* Text colors */
+    --textBlack: #232111;
+}

@@ -1,3 +1,7 @@
 .header {
     composes: textHeader from './typography.css';
 }
+
+.bodyCopy {
+    composes: textBody from './typography.css';
+}

@@ -1,3 +1,5 @@
+@import './colors.css';
+
 @font-face {
     font-family: 'Alegreya';
     src: url('../fonts/alegreya-regular-webfont.woff2') format('woff2'),
@@ -38,24 +40,31 @@
     font-style: normal;
 }
 
+h1,
 .textHeader {
     font-family: 'Rochester',cursive;
     font-weight: normal;
     font-style: normal;
+    color: var(--textBlack);
     font-size: 80px;
     line-height: 1.0;
     text-align: center;
 }
 
+h2,
 .textSubheader {
+    color: var(--textBlack);
     font-family: 'Alegreya',Georgia,Utopia,Charter,serif;
     font-weight: normal;
     font-style: normal;
     font-size: 32px;
     line-height: 1.2;
+    margin: 1em 0 .2em 0;
 }
 
+p,
 .textBody {
+    color: var(--textBlack);
     font-family: 'Open Sans','Segoe UI',Tahoma,sans-serif;
     font-weight: normal;
     font-style: normal;

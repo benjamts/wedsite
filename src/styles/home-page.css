@@ -1,7 +1,13 @@
+@import './colors.css';
+
+
 .cutePhoto {
-    width: 100%;
+    box-shadow: 0px 0px 1px rgba(35, 37, 53, 1);
+    border-radius: .25rem;
+    display: block;
     height: auto;
-    border: 2px solid white;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .header {
@@ -12,6 +18,12 @@
     composes: textBody from './typography.css';
 }
 
-.subheader {
+.sectionHeader {
     composes: textSubheader from './typography.css';
+}
+
+.subheader {
+    composes: sectionHeader;
+    margin: 1em 0;
+    text-align: center;
 }

@@ -6,7 +6,6 @@ import {
   StaticRouter
 } from 'react-router-dom'
 
-import App from './src/app'
 import Routes from './src/routes'
 
 /*
@@ -18,20 +17,37 @@ if (typeof document !== 'undefined') {
       {Routes}
     </BrowserRouter>,
     document.getElementById('react-root')
-  )
+  );
 }
 
 /*
   Used by webpack StaticSiteGeneratorPlugin for pre-renderering at build time.
   Results served as static site.
 */
-export default (locals, callback) => {
-  const html = ReactDOMServer.renderToStaticMarkup(
-    <App>
+export default (locals) => {
+  // fs and Plates are provided during prerendering via
+  // StaticSiteGeneratorPlugin configuration in webpack.config.js
+  //
+  // They are not included in the JS bundle that is delivered to the client.
+  const template = global.fs.readFileSync('./index.html').toString();
+
+  const data = {
+    'css-hash': `${locals.webpackStats.hash}.css`,
+    'js-hash': `${locals.webpackStats.hash}.js`,
+  }
+
+  const map = new Plates.Map();
+  map.where('src').is('/bundle.js').insert('js-hash');
+  map.where('href').is('/styles.css').insert('css-hash');
+  map.where('id').is('react-root').append(
+    ReactDOMServer.renderToString(
       <StaticRouter location={locals.path} context={{}}>
         {Routes}
       </StaticRouter>
-    </App>
-  )
-  callback(null, html)
+    )
+  );
+
+  const html = Plates.bind(template, data, map);
+
+  return html;
 }
