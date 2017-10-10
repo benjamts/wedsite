@@ -13,7 +13,7 @@
 
 .link {
     composes: textBold from './typography.css';
-    color: #FFF;
+    color: var(--white);
     background-color: transparent;
     flex: 0 1 auto;
     text-decoration: none;

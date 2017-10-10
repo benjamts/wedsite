@@ -1,3 +1,4 @@
+@import './normalize.css';
 @import './colors.css';
 
 :root {
@@ -25,7 +26,9 @@
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     flex: 1 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    max-width: 50rem;
+    width: 100%;
 }
 
 .page {
@@ -58,7 +61,7 @@
 
     .contents {
         box-shadow: 0px 0px 10px rgba(35, 37, 53, .5);
-        padding-bottom: var(--headerHeight);
+        padding: 2rem 2rem var(--headerHeight) 2rem;
         margin: 2rem auto;
     }
 

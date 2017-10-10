@@ -1,8 +1,11 @@
 import styles from '../styles/header.css'
+import logo from '../images/cat.jpg'
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../images/cat.jpg'
+
+import classNames from '../utils/class_names';
+import reallyStopPropagation from '../utils/really_stop_propagation';
 
 
 function HeaderLink(props) {
@@ -16,21 +19,52 @@ function HeaderLink(props) {
   );
 }
 
+/*
+  Each page end up with a separate instance of the Header component. In order
+  to animate the header closed, the new instance must start out in an open
+  state. This closed-over variable is shared across all instances.
+*/
+let headerNavIsOpen = false;
+
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false }
-    this.toggleOpen = this.toggleOpen.bind(this);
+    this.state = { isOpen: headerNavIsOpen }
+
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
   }
 
-  toggleOpen() {
-    this.setState({ open: !this.state.open });
+  componentDidMount() {
+    document.addEventListener('click', this.close);
+    setTimeout(() => this.setState({ isOpen: false }));
+  }
+
+  componentDidUpdate() {
+    headerNavIsOpen = this.state.isOpen;
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.close);
+  }
+
+  close() {
+    this.setState({ isOpen: false });
+  }
+
+  open() {
+    this.setState({ isOpen: true });
   }
 
   render() {
-    const classes = styles.header + (this.state.open ? ' ' + styles.open : '');
+    const classes = classNames(styles.header, {
+      [styles.open]: this.state.isOpen
+    });
     return (
-      <header className={classes}>
+      <header
+        className={classes}
+        onClick={reallyStopPropagation}
+      >
         <div className={styles.headerLinks}>
           <HeaderLink to="/">Home</HeaderLink>
           <HeaderLink to="/venue">Venue</HeaderLink>
@@ -41,7 +75,7 @@ export default class Header extends React.Component {
         <button
           className={styles.openToggle}
           type="button"
-          onClick={this.toggleOpen}
+          onClick={this.state.isOpen ? this.close : this.open}
         ></button>
       </header>
     )

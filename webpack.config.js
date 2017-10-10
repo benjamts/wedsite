@@ -1,5 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlCriticalPlugin = require('html-critical-webpack-plugin');
+const HTMLCriticalPlugin = require('html-critical-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
@@ -78,11 +78,6 @@ const config = {
 }
 
 if (PRODUCTION) {
-  // config.plugins.push(
-  //   new OptimizeCssAssetsPlugin({
-  //     cssProcessorOptions: { discardComments: { removeAll: true } },
-  //   })
-  // );
   // Inline critical CSS into each page
   [
     '',
@@ -92,13 +87,14 @@ if (PRODUCTION) {
     'venue/',
   ].forEach(function(page) {
     config.plugins.push(
-      new HtmlCriticalPlugin({
+      new HTMLCriticalPlugin({
         base: path.resolve('dist'),
+        assetPaths: [path.resolve('dist')],
         src: `${page}index.html`,
         dest: `${page}index.html`,
         inline: true,
         minify: true,
-        extract: true,
+        extract: false,  // TODO: figure out how to extract AND minify other CSS
         penthouse: {
           blockJSRequests: true,
         }

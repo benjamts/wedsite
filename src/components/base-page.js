@@ -4,6 +4,8 @@ import largeBackground from '../images/midday-flatirons.jpg'
 
 import React from 'react'
 
+import classNames from '../utils/class_names';
+
 import Header from '../components/header'
 
 
@@ -37,10 +39,9 @@ class BasePage extends React.Component {
   }
 
   render() {
-    let bgClasses = styles.backdrop;
-    if (!this.state.preloaded) {
-      bgClasses += ' ' + styles.loadingImage;
-    }
+    let bgClasses = classNames(styles.backdrop, {
+      [styles.loadingImage]: !this.state.preloaded,
+    });
 
     return (
       <div className={styles.page}>

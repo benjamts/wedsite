@@ -10,8 +10,8 @@ export default (props) => {
   return (
     <Base>
       <h1 className={styles.header}>RSVP</h1>
-      <h2>Can you make it?</h2>
-      <RSVPForm />
+      <h2 className={styles.subheader}>Can you make it?</h2>
+      <RSVPForm></RSVPForm>
     </Base>
   )
 }

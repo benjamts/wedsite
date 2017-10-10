@@ -1,1 +1,168 @@
-@import './forms.css'
+@import './colors.css';
+
+.fieldsetLegend {
+    composes: textBold from './typography.css';
+    margin-bottom: -.5rem;
+    padding-top: .375rem;
+}
+
+.formFieldset {
+    composes: textBody from './typography.css';
+    align-items: stretch;
+    border: 0;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    order: 1;
+    margin: 0 .125rem;
+    padding: .75rem .75rem .625rem .35rem;
+}
+
+.formFieldset .formFieldset:last-child {
+    padding-bottom: 0;
+}
+
+.formFieldset .formFieldset {
+    padding-right: 0;
+    padding-left: 1rem;
+    margin-right: 0;
+}
+
+.inputError {
+    composes: textItalic from './typography.css';
+    color: red;
+    font-size: .833rem;
+    flex: 0 1 auto;
+    margin: .25rem 0;
+    order: 2;
+    width: 100%;
+}
+
+.inputError:empty {
+    display: none;
+}
+
+.inputLabel {
+    composes: textBody from './typography.css';
+    display: block;
+    flex: 0 1 auto;
+    margin: .25rem 0;
+    order: 0;
+    width: 100%;
+}
+
+legend.inputLabel {
+    margin-bottom: 0;
+    padding-top: .375rem;
+}
+
+.input {
+    composes: textBody from './typography.css';
+    appearance: none;
+    background-color: white;
+    border-radius: .125rem;
+    border: .0625rem solid black;
+    box-shadow: none;
+    display: block;
+    flex: 0 1 auto;
+    margin-bottom: 0;
+    order: 1;
+    padding: 1rem;
+    width: 100%;
+}
+
+.selectInput {
+    composes: input;
+}
+
+.textareaInput {
+    composes: input;
+    min-height: 3.2rem;
+    resize: vertical;
+}
+
+.textInput {
+    composes: input;
+}
+
+.submitButton {
+    composes: textBody from './typography.css';
+    align-self: flex-start;
+    appearance: none;
+    background-color: var(--yellow);
+    border-radius: .125rem;
+    cursor: pointer;
+    border: 0;
+    display: inline-block;
+    min-width: 9em;  /* `('Saving...').length  // lol` */
+    padding: .75rem 1rem;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.submitButton:active {
+    background-color: var(--yellow-dark);
+    color: var(--white);
+}
+
+.submitButton:disabled,
+.submitButton:disabled:hover,
+.submitButton:disabled:focus,
+.submitButton:disabled:active {
+    background-color: #b1b1b1;
+    color: #5b5b5b;
+    cursor: not-allowed;
+}
+
+.flexbugWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: -.25rem;
+}
+
+.radioInput {
+    composes: input;
+    opacity: 0;
+    position: absolute;
+}
+
+.radioInputLabel {
+    composes: textInput;
+    cursor: pointer;
+    flex: 1 1 0%;
+    margin: .25rem;
+    min-width: 10em;
+}
+
+.radioInput:focus + .radioInputLabel {
+    outline-color: Highlight;
+    outline-offset: -.125rem;
+    outline-style: solid;
+    outline-width: .3125rem;
+}
+
+@media (-webkit-min-device-pixel-ratio:0) {
+    .radioInput:focus + .radioInputLabel {
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+}
+
+.radioInput:checked + .radioInputLabel {
+    background-color: var(--yellow-dark);
+    border-color: var(--yellow-dark);
+    color: var(--white);
+}
+
+.input[required] ~ .inputLabel::after {
+    color: red;
+    content: '(required)';
+    font-family: inherit;
+    font-size: small;
+    font-style: italic;
+    font-weight: normal;
+    padding-left: .5em;
+}

@@ -1,3 +1,67 @@
 .header {
     composes: textHeader from './typography.css';
 }
+
+.partyMemberList {
+    list-style: none;
+    padding: 0;
+}
+
+.partyMember {
+
+}
+
+.name {
+    composes: textSubheader from './typography.css';
+    margin-bottom: 0;
+}
+
+.role {
+    composes: textBody from './typography.css';
+    font-size: smaller;
+    font-style: italic;
+    margin: 0 0 .8em 0;
+}
+
+.pictureFrame {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, .25);
+    width: 100%;
+}
+
+.photo {
+    opacity: 0;
+    width: 100%;
+}
+
+.partyMember:nth-child(even) .pictureFrame {
+    float: right;
+    margin-left: 1em;
+}
+
+.partyMember:nth-child(odd) .pictureFrame {
+    float: left;
+    margin-right: .7em;
+}
+
+.bio {
+    composes: textBody from './typography.css';
+}
+
+.bio::before {
+    /*
+        this pseudo-element prevents text from becoming too narrow in the
+        margins next to the photos.
+    */
+    content: '';
+    display: table;
+    min-width: 6em;
+}
+
+@media screen and (min-width: 500px) {
+    .pictureFrame {
+        width: auto;
+    }
+}

@@ -12,7 +12,7 @@ import Routes from './src/routes'
   Client takes over rendering after being served a pre-rendered page
 */
 if (typeof document !== 'undefined') {
-  ReactDOM.render(
+  ReactDOM.hydrate(
     <BrowserRouter>
       {Routes}
     </BrowserRouter>,
@@ -32,8 +32,8 @@ export default (locals) => {
   const template = global.fs.readFileSync('./index.html').toString();
 
   const data = {
-    'css-hash': `${locals.webpackStats.hash}.css`,
-    'js-hash': `${locals.webpackStats.hash}.js`,
+    'css-hash': `/${locals.webpackStats.hash}.css`,
+    'js-hash': `/${locals.webpackStats.hash}.js`,
   }
 
   const map = new Plates.Map();
