@@ -65,7 +65,7 @@ export default class RegistryPage extends React.PureComponent {
           mollit anim id est laborum.
         </p>
         <ul className={styles.charityList}>
-          {CHARITIES.map(info => <Charity {...info} />)}
+          {CHARITIES.map(info => <Charity {...info} key={info.name} />)}
         </ul>
       </Base>
     );
