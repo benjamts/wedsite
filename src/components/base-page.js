@@ -35,7 +35,7 @@ class BasePage extends React.Component {
       preloadedBGImg = largeBackground;
       this.setState({ preloaded: true });
     });
-    preloadImg.src = largeBackground;
+    preloadImg.src = `/${largeBackground}`;
   }
 
   render() {
