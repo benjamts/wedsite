@@ -12,7 +12,7 @@ const config = {
 
   output: {
     filename: '[hash].js',
-    path: path.resolve('./dist'),
+    path: path.resolve('./docs'),
     libraryTarget: 'umd'
   },
 
@@ -88,8 +88,8 @@ if (PRODUCTION) {
   ].forEach(function(page) {
     config.plugins.push(
       new HTMLCriticalPlugin({
-        base: path.resolve('dist'),
-        assetPaths: [path.resolve('dist')],
+        base: path.resolve('docs'),
+        assetPaths: [path.resolve('docs')],
         src: `${page}index.html`,
         dest: `${page}index.html`,
         inline: true,
