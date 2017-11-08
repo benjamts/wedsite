@@ -77,7 +77,7 @@ class PartyMember extends React.PureComponent {
           <img
             alt={`Picture of ${this.props.name}`}
             className={styles.photo}
-            src={this.props.imgSrc}
+            src={`/${this.props.imgSrc}`}
           />
         </span>
         <h2 className={styles.name}>{this.props.name}</h2>

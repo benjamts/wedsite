@@ -40,7 +40,7 @@ class Charity extends React.PureComponent {
         <a className={styles.link}>
           <img
             className={styles.logo}
-            src={this.props.logoSrc}
+            src={`/${this.props.logoSrc}`}
           />
           <h3 className={styles.name}>{this.props.name}</h3>
           <p className={styles.description}>{this.props.description}</p>
