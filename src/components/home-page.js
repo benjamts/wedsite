@@ -3,8 +3,11 @@ import styles from '../styles/home-page.css'
 import React from 'react'
 
 import Base from './base-page'
+import CountdownTimer from './countdown-timer'
 import cutePhoto from '../images/engagement-photo-narrow.jpg'
 
+
+const ceremonyStart = new Date('Sat, 08 Sep 2018 22:00:00 GMT');
 
 export default (props) => {
   return (
@@ -19,8 +22,8 @@ export default (props) => {
         Sarah Symonds
       </h1>
       <p className={styles.subheader}>
-        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-        consectetur, adipisci velit
+        September 9th, 2018 &bull; Boulder, CO
+        <CountdownTimer end={ceremonyStart}></CountdownTimer>
       </p>
       <img
         className={styles.cutePhoto}

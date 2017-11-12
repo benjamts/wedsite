@@ -1,0 +1,28 @@
+.timer {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.unitSection {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 1 auto;
+  justify-content: flex-start;
+}
+
+.count {
+  composes: textSubheader from './typography.css';
+  flex: 0 1 auto;
+  font-weight: bold;
+  margin-top: .5em;
+}
+
+.label {
+  composes: textBody from './typography.css';
+  flex: 0 1 auto;
+}
