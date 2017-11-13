@@ -71,6 +71,8 @@ const config = {
             this.addEventListener = function() {}
           },
           scrollTo: function() {},
+          setInterval: function() {},
+          setTimeout: function() {},
         }
       }
     }),
