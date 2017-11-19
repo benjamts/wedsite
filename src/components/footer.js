@@ -3,8 +3,7 @@ import styles from '../styles/footer.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-
-function FooterLink(props) {
+function FooterLink (props) {
   return (
     <NavLink
       activeClassName={styles.activeLink}
@@ -12,14 +11,14 @@ function FooterLink(props) {
       exact
       to={props.to}
     >{props.children}</NavLink>
-  );
+  )
 }
 
 export default (props) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLinks}>
-        <FooterLink to="/about-us">More About</FooterLink>
+        <FooterLink to='/about-us'>More About</FooterLink>
       </div>
     </footer>
   )

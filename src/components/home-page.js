@@ -6,8 +6,7 @@ import Base from './base-page'
 import CountdownTimer from './countdown-timer'
 import cutePhoto from '../images/engagement-photo-narrow.jpg'
 
-
-const ceremonyStart = new Date('Sat, 08 Sep 2018 22:00:00 GMT');
+const ceremonyStart = new Date('Sat, 08 Sep 2018 22:00:00 GMT')
 
 export default (props) => {
   return (
@@ -18,12 +17,12 @@ export default (props) => {
       */}
       <h1 className={styles.header}>
          Tyler Benjamin
-        <br/>&amp;<br/>
+        <br />&amp;<br />
         Sarah Symonds
       </h1>
       <p className={styles.subheader}>
         September 9th, 2018 &bull; Boulder, CO
-        <CountdownTimer end={ceremonyStart}></CountdownTimer>
+        <CountdownTimer end={ceremonyStart} />
       </p>
       <img
         className={styles.cutePhoto}

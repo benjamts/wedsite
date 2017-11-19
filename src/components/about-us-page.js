@@ -1,9 +1,8 @@
-import styles from '../styles/about-us-page.css';
+import styles from '../styles/about-us-page.css'
 
 import React from 'react'
 
 import Base from './base-page'
-
 
 export default (props) => {
   return (

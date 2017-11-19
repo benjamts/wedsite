@@ -42,7 +42,7 @@
     "build:production": "npm run clean && NODE_ENV=production webpack -p && cp CNAME docs/CNAME",
     "clean": "rm -rf docs",
     "deploy": "npm run build:production",
-    "lint": "standard",
+    "lint": "standard ./src/**/*.js",
     "start": "webpack-dev-server",
     "test": "webpack"
   }

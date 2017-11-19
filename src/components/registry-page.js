@@ -1,40 +1,38 @@
-import styles from '../styles/registry-page.css';
+import styles from '../styles/registry-page.css'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import Base from './base-page'
 
 import catPic from '../images/cat.jpg'
 
-
-const LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+const LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 const CHARITIES = [
   {
     description: LOREM_IPSUM,
     logoSrc: catPic,
-    name: 'Sharks!',
+    name: 'Sharks!'
   },
   {
     description: LOREM_IPSUM,
     logoSrc: catPic,
-    name: 'Ballet!',
+    name: 'Ballet!'
   },
   {
     description: LOREM_IPSUM,
     logoSrc: catPic,
-    name: 'Science!',
+    name: 'Science!'
   },
   {
     description: LOREM_IPSUM,
     logoSrc: catPic,
-    name: 'Hungry kids or something!',
-  },
-];
-
+    name: 'Hungry kids or something!'
+  }
+]
 
 class Charity extends React.PureComponent {
-  render() {
+  render () {
     return (
       <li className={styles.charity}>
         <a className={styles.link}>
@@ -46,12 +44,17 @@ class Charity extends React.PureComponent {
           <p className={styles.description}>{this.props.description}</p>
         </a>
       </li>
-    );
+    )
   }
+}
+Charity.propTypes = {
+  description: PropTypes.string.isRequired,
+  logoSrc: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 }
 
 export default class RegistryPage extends React.PureComponent {
-  render() {
+  render () {
     return (
       <Base>
         <h1 className={styles.header}>Registry</h1>
@@ -68,6 +71,6 @@ export default class RegistryPage extends React.PureComponent {
           {CHARITIES.map(info => <Charity {...info} key={info.name} />)}
         </ul>
       </Base>
-    );
+    )
   }
 }

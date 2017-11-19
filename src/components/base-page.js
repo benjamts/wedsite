@@ -4,49 +4,48 @@ import largeBackgroundImg from '../images/midday-flatirons.jpg'
 
 import React from 'react'
 
-import classNames from '../utils/class_names';
+import classNames from '../utils/class_names'
 
 import Header from '../components/header'
 
-
 // the large background URL needs a leading slash and the small BG data URI can't have one.
-const largeBackground = `/${largeBackgroundImg}`;
+const largeBackground = `/${largeBackgroundImg}`
 
 /*
   Closing over this so that transitioning between pages doesn't re-trigger the
   blur animation.
 */
-let isPreloaded = false;
+let isPreloaded = false
 
 class BasePage extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
-      preloaded: isPreloaded,
-    };
+      preloaded: isPreloaded
+    }
 
     // Scroll to top on page change
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     /*
       Preload the very large background image. Once it's been loaded, remove
       the CSS class that uses a smaller version and transitions the removal of
       a blur effect.
     */
-    const preloadImg = new window.Image();
+    const preloadImg = new window.Image()
     preloadImg.addEventListener('load', () => {
-      isPreloaded = true;
-      this.setState({ preloaded: true });
-    });
-    preloadImg.src = largeBackground;
+      isPreloaded = true
+      this.setState({ preloaded: true })
+    })
+    preloadImg.src = largeBackground
   }
 
-  render() {
+  render () {
     let bgClasses = classNames(styles.backdrop, {
-      [styles.loadingImage]: !this.state.preloaded,
-    });
+      [styles.loadingImage]: !this.state.preloaded
+    })
 
-    const bgImgUrl = isPreloaded ? largeBackground : tinyBackground;
+    const bgImgUrl = isPreloaded ? largeBackground : tinyBackground
 
     return (
       <div className={styles.page}>
@@ -56,13 +55,13 @@ class BasePage extends React.Component {
         </div>
         <div
           className={bgClasses}
-          role="img"
+          role='img'
           style={{ backgroundImage: `url(${bgImgUrl})` }}
-          title="The Flatirons in Boulder, CO"
-        ></div>
+          title='The Flatirons in Boulder, CO'
+         />
       </div>
     )
   }
 }
 
-export default BasePage;
+export default BasePage

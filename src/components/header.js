@@ -1,14 +1,13 @@
 import styles from '../styles/header.css'
-import logo from '../images/cat.jpg'
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import classNames from '../utils/class_names';
-import reallyStopPropagation from '../utils/really_stop_propagation';
+import classNames from '../utils/class_names'
+import reallyStopPropagation from '../utils/really_stop_propagation'
 
-
-function HeaderLink(props) {
+function HeaderLink (props) {
   return (
     <NavLink
       activeClassName={styles.linkActive}
@@ -16,7 +15,10 @@ function HeaderLink(props) {
       exact
       to={props.to}
     >{props.children}</NavLink>
-  );
+  )
+}
+HeaderLink.propTypes = {
+  to: PropTypes.string.isRequired
 }
 
 /*
@@ -24,59 +26,59 @@ function HeaderLink(props) {
   to animate the header closed, the new instance must start out in an open
   state. This closed-over variable is shared across all instances.
 */
-let headerNavIsOpen = false;
+let headerNavIsOpen = false
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = { isOpen: headerNavIsOpen }
 
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
+    this.open = this.open.bind(this)
+    this.close = this.close.bind(this)
   }
 
-  componentDidMount() {
-    document.addEventListener('click', this.close);
-    setTimeout(() => this.setState({ isOpen: false }));
+  componentDidMount () {
+    document.addEventListener('click', this.close)
+    setTimeout(() => this.setState({ isOpen: false }))
   }
 
-  componentDidUpdate() {
-    headerNavIsOpen = this.state.isOpen;
+  componentDidUpdate () {
+    headerNavIsOpen = this.state.isOpen
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.close);
+  componentWillUnmount () {
+    document.removeEventListener('click', this.close)
   }
 
-  close() {
-    this.setState({ isOpen: false });
+  close () {
+    this.setState({ isOpen: false })
   }
 
-  open() {
-    this.setState({ isOpen: true });
+  open () {
+    this.setState({ isOpen: true })
   }
 
-  render() {
+  render () {
     const classes = classNames(styles.header, {
       [styles.open]: this.state.isOpen
-    });
+    })
     return (
       <header
         className={classes}
         onClick={reallyStopPropagation}
       >
         <div className={styles.headerLinks}>
-          <HeaderLink to="/">Home</HeaderLink>
-          <HeaderLink to="/venue">Venue</HeaderLink>
-          <HeaderLink to="/rsvp">RSVP</HeaderLink>
-          <HeaderLink to="/registry">Registry</HeaderLink>
-          <HeaderLink to="/bridal-party">Bridal Party</HeaderLink>
+          <HeaderLink to='/'>Home</HeaderLink>
+          <HeaderLink to='/venue'>Venue</HeaderLink>
+          <HeaderLink to='/rsvp'>RSVP</HeaderLink>
+          <HeaderLink to='/registry'>Registry</HeaderLink>
+          <HeaderLink to='/bridal-party'>Bridal Party</HeaderLink>
         </div>
         <button
           className={styles.openToggle}
-          type="button"
+          type='button'
           onClick={this.state.isOpen ? this.close : this.open}
-        ></button>
+         />
       </header>
     )
   }
