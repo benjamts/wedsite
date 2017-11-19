@@ -16,13 +16,13 @@ const largeBackground = `/${largeBackgroundImg}`;
   Closing over this so that transitioning between pages doesn't re-trigger the
   blur animation.
 */
-let preloadedBGImg = tinyBackground;
+let isPreloaded = false;
 
 class BasePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      preloaded: preloadedBGImg === largeBackground,
+      preloaded: isPreloaded,
     };
 
     // Scroll to top on page change
@@ -35,7 +35,7 @@ class BasePage extends React.Component {
     */
     const preloadImg = new window.Image();
     preloadImg.addEventListener('load', () => {
-      preloadedBGImg = largeBackground;
+      isPreloaded = true;
       this.setState({ preloaded: true });
     });
     preloadImg.src = largeBackground;
@@ -46,6 +46,8 @@ class BasePage extends React.Component {
       [styles.loadingImage]: !this.state.preloaded,
     });
 
+    const bgImgUrl = isPreloaded ? largeBackground : tinyBackground;
+
     return (
       <div className={styles.page}>
         <Header />
@@ -55,7 +57,7 @@ class BasePage extends React.Component {
         <div
           className={bgClasses}
           role="img"
-          style={{ backgroundImage: `url(${preloadedBGImg})` }}
+          style={{ backgroundImage: `url(${bgImgUrl})` }}
           title="The Flatirons in Boulder, CO"
         ></div>
       </div>
