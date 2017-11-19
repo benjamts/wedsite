@@ -1,3 +1,4 @@
 node_modules
 .git
+.DS_Storenpm-debug.log
 .DS_Store
