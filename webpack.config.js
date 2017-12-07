@@ -3,6 +3,7 @@ const HTMLCriticalPlugin = require('html-critical-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+const DefinePlugin = require('webpack').DefinePlugin;
 
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -56,6 +57,10 @@ const config = {
   },
 
   plugins: [
+    new DefinePlugin({
+      PRODUCTION: JSON.stringify(PRODUCTION),
+      API_HOST: JSON.stringify(PRODUCTION ? 'https://api.tylerandsarah.com' : 'http://localhost:3000'),
+    }),
     new ExtractTextPlugin({
       allChunks: true,
       filename: '[hash].css',
