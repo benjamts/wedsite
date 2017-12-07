@@ -50,7 +50,7 @@ class Charity extends React.PureComponent {
 Charity.propTypes = {
   description: PropTypes.string.isRequired,
   logoSrc: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 }
 
 export default class RegistryPage extends React.PureComponent {

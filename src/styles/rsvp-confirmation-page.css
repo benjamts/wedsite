@@ -1,0 +1,8 @@
+.header {
+    composes: textHeader from './typography.css';
+}
+
+.subheader {
+    composes: subHeader from './typography.css';
+    text-align: center;
+}

@@ -68,6 +68,9 @@ const config = {
     }),
     new StaticSiteGeneratorPlugin({
       crawl: true,
+      paths: [
+        '/thanks',
+      ],
       globals: {
         fs: require('fs'),
         Plates: require('plates'),
@@ -91,7 +94,8 @@ if (PRODUCTION) {
     'bridal-party/',
     'registry/',
     'rsvp/',
-    'venue/',
+    'thanks/',
+    'venue/'
   ].forEach(function(page) {
     config.plugins.push(
       new HTMLCriticalPlugin({

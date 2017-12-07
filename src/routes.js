@@ -9,6 +9,7 @@ import BridalParty from './components/bridal-party-page'
 import Home from './components/home-page'
 import Registry from './components/registry-page'
 import RSVP from './components/rsvp-page'
+import RSVPConfirmation from './components/rsvp-confirmation-page'
 import Venue from './components/venue-page'
 
 
@@ -19,6 +20,7 @@ export default (
     <Route exact path='/bridal-party' component={BridalParty} />
     <Route exact path='/registry' component={Registry} />
     <Route exact path='/rsvp' component={RSVP} />
+    <Route exact path='/thanks' component={RSVPConfirmation} />
     <Route exact path='/venue' component={Venue} />
   </Switch>
 )
