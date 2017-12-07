@@ -307,7 +307,12 @@ class AttendeeRSVPForm extends React.Component {
     .catch(res => {
       if (res.status === 401) {
         return res.json()
-        .then(err => this.setState({ inviteCodeError: err.message }))
+        .then(err => {
+          this.setState({ inviteCodeError: err.message })
+          document.getElementById('inviteCodeInput').scrollIntoView({
+            behavior: 'smooth'
+          })
+        })
       }
     })
   }
