@@ -310,8 +310,6 @@ class AttendeeRSVPForm extends React.Component {
         .then(err => this.setState({ inviteCodeError: err.message }))
       }
     })
-
-    console.log(this.state)
   }
 
   render () {
