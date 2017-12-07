@@ -39,7 +39,7 @@
   },
   "scripts": {
     "build": "npm run clean && webpack",
-    "build:production": "npm run clean && NODE_ENV=production webpack -p && cp CNAME docs/CNAME",
+    "build:production": "npm run clean && NODE_ENV=production webpack -p && cp CNAME docs/CNAME && cp favicon.ico docs/favicon.ico",
     "clean": "rm -rf docs",
     "deploy": "npm run build:production",
     "lint": "standard ./src/**/*.js",
