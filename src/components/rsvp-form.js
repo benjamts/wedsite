@@ -232,7 +232,10 @@ class AttendeeRSVPForm extends React.Component {
   }
 
   get errorFields () {
-    return Object.keys(this.state).filter(k => k.endsWith('Error'))
+    return Object.keys(this.state)
+           .filter(k => k.endsWith('Error'))
+           .filter(k => !k.startsWith('inviteCode'))
+           .filter(k => !k.startsWith('additionalNotes'))
   }
 
   get hasError () {
