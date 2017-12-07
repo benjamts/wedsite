@@ -2,6 +2,7 @@ import styles from '../styles/rsvp-form.css'
 
 import PropTypes from 'prop-types'
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import range from '../utils/range'
 
@@ -204,7 +205,7 @@ AttendeeRSVPFields.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-export default class AttendeeRSVPForm extends React.Component {
+class AttendeeRSVPForm extends React.Component {
   constructor (props) {
     super(props)
 
@@ -272,8 +273,40 @@ export default class AttendeeRSVPForm extends React.Component {
     e.preventDefault()
     this.setState({ isSubmitting: true })
 
-    // TODO: actually make an API request here
-    setTimeout(() => this.setState({ isSubmitting: false }), 2000)
+    const numberOfAttendees = parseInt(this.state.numberOfAttendees, 10)
+    window.fetch(`${API_HOST}/rsvp`, {  // eslint-disable-line no-undef
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        inviteCode: this.state.inviteCode,
+        numberOfAttendees: numberOfAttendees,
+        attendees: range(0, numberOfAttendees).map((x, i) => {
+          return {
+            isAttending: this.state[`attendee${i}IsAttending`] === 'true',
+            name: this.state[`attendee${i}Name`]
+          }
+        }),
+        additionalNotes: this.state.additionalNotes
+      })
+    })
+    .then(res => {
+      this.setState({ isSubmitting: false })
+      if (res.ok) {
+        this.props.history.push('/thanks')
+      } else {
+        return Promise.reject(res)
+      }
+    })
+    .catch(res => {
+      if (res.status === 401) {
+        return res.json()
+        .then(err => this.setState({ inviteCodeError: err.message }))
+      }
+    })
 
     console.log(this.state)
   }
@@ -326,3 +359,5 @@ export default class AttendeeRSVPForm extends React.Component {
     )
   }
 }
+
+export default withRouter(AttendeeRSVPForm)
