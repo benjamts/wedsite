@@ -2,6 +2,14 @@
     composes: textHeader from './typography.css';
 }
 
+.subheader {
+    composes: textSubheader from './typography.css';
+}
+
 .bodyCopy {
     composes: textBody from './typography.css';
+}
+
+.link {
+    composes: textAnchor from './typography.css';
 }

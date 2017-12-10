@@ -8,37 +8,32 @@ export default (props) => {
   return (
     <Base>
       <h1 className={styles.header}>Venue</h1>
-      <h2>Where</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+
+      <h2 className={styles.subheader}>Location</h2>
+      <p className={styles.bodyCopy}>
+        <a
+          className={styles.link}
+          href="https://www.chautauqua.com/lodging/map-directions/"
+          target="_blank"
+        >The Colorado Chataqua</a> in Boulder, CO.
+      </p>
+      <p className={styles.bodyCopy}>
+        900 Baseline Road<br />
+        Boulder, CO 80302<br />
+        United States of America
+      </p>
+      <h2 className={styles.subheader}>The Ceremony</h2>
+      <p className={styles.bodyCopy}>
+        The ceremony will begin at 4:00pm on the lawn.
       </p>
 
-      <h2>When</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-
-      <h2>Accommodations</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+      <h2 className={styles.subheader}>Dinner and Reception</h2>
+      <p className={styles.bodyCopy}>
+        After the ceremony we'll move across the lawn to{' '}<a
+          className={styles.link}
+          href="https://www.chautauqua.com/dining-hall/overview/"
+          target="_blank"
+        >The Chataqua Dining Hall</a> for a night of food, drinks, and dancing.
       </p>
     </Base>
   )
