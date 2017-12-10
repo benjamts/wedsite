@@ -1,6 +1,4 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HTMLCriticalPlugin = require('html-critical-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const DefinePlugin = require('webpack').DefinePlugin;
