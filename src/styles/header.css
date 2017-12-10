@@ -50,6 +50,7 @@
 }
 
 .link {
+    align-self: stretch;
     color: #232111;
     background-color: transparent;
     flex: 0 1 auto;
@@ -95,6 +96,7 @@
     .open .headerLinks{
         background-color: transparent;
         box-shadow: none;
+        height: 100%;
         transform: translateY(0%);
         transition: none;
         z-index: auto;
