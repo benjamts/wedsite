@@ -70,8 +70,8 @@ export default class Header extends React.Component {
         <div className={styles.headerLinks}>
           <HeaderLink to='/'>Home</HeaderLink>
           <HeaderLink to='/venue'>Venue</HeaderLink>
-          <HeaderLink to='/rsvp'>RSVP</HeaderLink>
           <HeaderLink to='/lodging'>Lodging</HeaderLink>
+          <HeaderLink to='/rsvp'>RSVP</HeaderLink>
           <HeaderLink to='/registry'>Registry</HeaderLink>
           <HeaderLink to='/bridal-party'>Bridal Party</HeaderLink>
         </div>
