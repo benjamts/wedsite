@@ -44,7 +44,7 @@ const config = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: [
-            `css-loader?modules&importLoaders=1&localIdentName=${cssName}`,
+            `css-loader?modules&importLoaders=1&localIdentName=${cssName}&minimize=true`,
             'postcss-loader',
           ]
         })
@@ -85,33 +85,6 @@ const config = {
       }
     }),
   ]
-}
-
-if (PRODUCTION) {
-  // Inline critical CSS into each page
-  [
-    '',
-    'bridal-party/',
-    'registry/',
-    'rsvp/',
-    'thanks/',
-    'venue/'
-  ].forEach(function(page) {
-    config.plugins.push(
-      new HTMLCriticalPlugin({
-        base: path.resolve('docs'),
-        assetPaths: [path.resolve('docs')],
-        src: `${page}index.html`,
-        dest: `${page}index.html`,
-        inline: true,
-        minify: true,
-        extract: false,  // TODO: figure out how to extract AND minify other CSS
-        penthouse: {
-          blockJSRequests: true,
-        }
-      })
-    );
-  });
 }
 
 module.exports = config;
