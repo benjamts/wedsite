@@ -38,7 +38,6 @@
     flex-flow: row wrap;
     font-weight: bold;
     justify-content: flex-start;
-    line-height: var(--headerHeight);
     position: relative;
     transform: translateY(-100%);
     width: 100%;
@@ -54,6 +53,7 @@
     color: #232111;
     background-color: transparent;
     flex: 0 1 auto;
+    line-height: var(--headerHeight);
     padding: 0 var(--headerLinkPadding);
     text-decoration: none;
     width: 100%;

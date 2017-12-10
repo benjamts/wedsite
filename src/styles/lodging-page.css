@@ -1,0 +1,15 @@
+.header {
+    composes: textHeader from './typography.css';
+}
+
+.subheader {
+    composes: textSubheader from './typography.css';
+}
+
+.textAnchor {
+    composes: textAnchor from './typography.css';
+}
+
+.textBody {
+    composes: textBody from './typography.css';
+}
