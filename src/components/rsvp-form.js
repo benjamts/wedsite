@@ -141,7 +141,7 @@ class NumberOfAttendees extends React.PureComponent {
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >How many people are in your party?</label>
+        >How many people are listed on your invitation?</label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
