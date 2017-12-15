@@ -5,3 +5,7 @@
 .bodyCopy {
     composes: textBody from './typography.css';
 }
+
+.linkCopy {
+    composes: textAnchor from './typography.css';
+}
