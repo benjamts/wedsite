@@ -30,6 +30,7 @@ export default (props) => {
           style={{ backgroundImage: `url(${cutePhoto})` }}
         >
           <img
+            alt="The happy couple under a vine-draped archway"
             className={styles.cutePhoto}
             src={cutePhoto}
           />
