@@ -24,10 +24,17 @@ export default (props) => {
         September 9th, 2018 &bull; Boulder, CO
         <CountdownTimer end={ceremonyStart} />
       </p>
-      <img
-        className={styles.cutePhoto}
-        src={cutePhoto}
-      />
+      <div className={styles.pictureWall}>
+        <span
+          className={styles.pictureFrame}
+          style={{ backgroundImage: `url(${cutePhoto})` }}
+        >
+          <img
+            className={styles.cutePhoto}
+            src={cutePhoto}
+          />
+        </span>
+      </div>
 
       <h2 className={styles.sectionHeader}>Our Story</h2>
       <p className={styles.bodyCopy}>
