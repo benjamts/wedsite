@@ -12,6 +12,7 @@ const config = {
   output: {
     filename: '[hash].js',
     path: path.resolve('./docs'),
+    publicPath: '/',
     libraryTarget: 'umd'
   },
 

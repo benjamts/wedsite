@@ -1,6 +1,6 @@
 import styles from '../styles/base-page.css'
 import tinyBackground from '../images/midday-flatirons-tiny.jpg'
-import largeBackgroundImg from '../images/midday-flatirons.jpg'
+import largeBackground from '../images/midday-flatirons.jpg'
 
 import React from 'react'
 
@@ -8,8 +8,6 @@ import classNames from '../utils/class_names'
 
 import Header from '../components/header'
 
-// the large background URL needs a leading slash and the small BG data URI can't have one.
-const largeBackground = `/${largeBackgroundImg}`
 
 /*
   Closing over this so that transitioning between pages doesn't re-trigger the

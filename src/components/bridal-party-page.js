@@ -71,12 +71,12 @@ class PartyMember extends React.PureComponent {
       <li className={styles.partyMember}>
         <span
           className={styles.pictureFrame}
-          style={{ backgroundImage: `url(/${this.props.imgSrc})` }}
+          style={{ backgroundImage: `url(${this.props.imgSrc})` }}
         >
           <img
             alt={`Picture of ${this.props.name}`}
             className={styles.photo}
-            src={`/${this.props.imgSrc}`}
+            src={this.props.imgSrc}
           />
         </span>
         <h2 className={styles.name}>{this.props.name}</h2>

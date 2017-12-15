@@ -26,7 +26,7 @@ export default (props) => {
       </p>
       <img
         className={styles.cutePhoto}
-        src={`/${cutePhoto}`}
+        src={cutePhoto}
       />
 
       <h2 className={styles.sectionHeader}>Our Story</h2>
