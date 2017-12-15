@@ -73,7 +73,6 @@ export default class Header extends React.Component {
           <HeaderLink to='/lodging'>Lodging</HeaderLink>
           <HeaderLink to='/rsvp'>RSVP</HeaderLink>
           <HeaderLink to='/registry'>Registry</HeaderLink>
-          <HeaderLink to='/bridal-party'>Bridal Party</HeaderLink>
         </div>
         <button
           className={styles.openToggle}
