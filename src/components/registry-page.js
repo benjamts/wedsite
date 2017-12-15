@@ -53,13 +53,13 @@ class Charity extends React.PureComponent {
   render () {
     return (
       <li className={styles.charity}>
-        <a className={styles.link} href={this.props.siteLink}>
+        <a className={styles.charityLink} href={this.props.siteLink}>
           <img
-            className={styles.logo}
+            className={styles.charityLogo}
             src={`${this.props.logoSrc}`}
           />
-          <h3 className={styles.name}>{this.props.name}</h3>
-          <p className={styles.description}>{this.props.description}</p>
+          <h3 className={styles.charityName}>{this.props.name}</h3>
+          <p className={styles.charityDescription}>{this.props.description}</p>
         </a>
       </li>
     )

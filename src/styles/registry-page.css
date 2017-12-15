@@ -9,3 +9,55 @@
 .linkCopy {
     composes: textAnchor from './typography.css';
 }
+
+.charity {
+
+}
+
+.charity:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.charityList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.charityLink {
+    padding: 1rem;
+}
+
+.charityLink,
+.charityLink:active,
+.charityLink:visited,
+.charityLink:focus {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+.charityDescription {
+    composes: bodyCopy;
+    margin-bottom: 0;
+}
+
+.charityDescription::after {
+    /* self-clearing goodness */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.charityLogo {
+    display: inline-block;
+    float: left;
+    height: 160px;
+    margin-right: 1rem;
+    width: 160px;
+}
+
+.charityName {
+    margin-top: 0;
+}
