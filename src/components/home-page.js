@@ -4,7 +4,7 @@ import React from 'react'
 
 import Base from './base-page'
 import CountdownTimer from './countdown-timer'
-import cutePhoto from '../images/engagement-photo-narrow.jpg'
+import cutePhoto from '../images/cute-photo-2.jpg'
 
 const ceremonyStart = new Date('Sat, 08 Sep 2018 22:00:00 GMT')
 
