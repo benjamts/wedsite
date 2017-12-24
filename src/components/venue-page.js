@@ -24,7 +24,8 @@ export default (props) => {
       </p>
       <h2 className={styles.subheader}>The Ceremony</h2>
       <p className={styles.bodyCopy}>
-        The ceremony will begin at 4:00pm on the lawn.
+        The ceremony will begin at 4:00pm on the Chautauqua Green, an open
+        grassy space in front of the Dining Hall and below the Flatirons.
       </p>
 
       <h2 className={styles.subheader}>Dinner and Reception</h2>
