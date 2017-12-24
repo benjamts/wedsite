@@ -5,3 +5,7 @@
 .subheader {
     composes: subHeader from './typography.css';
 }
+
+.textBody {
+    composes: textBody from './typography.css';
+}
