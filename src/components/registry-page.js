@@ -91,7 +91,7 @@ export default class RegistryPage extends React.PureComponent {
           to us). We have a very strange painting of a fox hunt hanging over our
           fireplace that we found on a street corner half a block away. (Did we
           mention we've found a lot of great stuff on the street over the
-          years?). We have all our needs covered. Plus, in a small apartment we
+          years?) We have all our needs covered. Plus, in a small apartment we
           don't have much room to put more things.
         </p>
         <p className={styles.bodyCopy}>
