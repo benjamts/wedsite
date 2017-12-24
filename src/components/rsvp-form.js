@@ -141,7 +141,7 @@ class NumberOfAttendees extends React.PureComponent {
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >How many people are listed on your invitation?</label>
+        >How many people are in your party?</label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
@@ -321,12 +321,6 @@ class AttendeeRSVPForm extends React.Component {
     const numberOfAttendees = parseInt(this.state.numberOfAttendees, 10) || 0
     return (
       <form onSubmit={this.submitWithAjax}>
-        <InviteCode
-          error={this.state.inviteCodeError}
-          name='inviteCode'
-          onChange={this.onFieldChange}
-          value={this.state.inviteCode}
-        />
         <NumberOfAttendees
           error={this.state.numberOfAttendeesError}
           name='numberOfAttendees'
@@ -354,6 +348,12 @@ class AttendeeRSVPForm extends React.Component {
           onChange={this.onFieldChange}
           value={this.state.additionalNotes}
          />
+        <InviteCode
+          error={this.state.inviteCodeError}
+          name='inviteCode'
+          onChange={this.onFieldChange}
+          value={this.state.inviteCode}
+        />
         <div className={styles.formFieldset}>
           <button
             className={styles.submitButton}
