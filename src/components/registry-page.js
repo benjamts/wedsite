@@ -8,7 +8,7 @@ import Base from './base-page'
 import catPic from '../images/cat.jpg'
 import kathyMataLogo from '../images/kathy-mata-ballet-logo.png';
 import donorsChooseLogo from '../images/donors-choose-logo.png';
-import sharkStewardsLogo from '../images/shark-stewards-logo.png';
+import cmeraLogo from '../images/cmera-logo.png';
 
 
 const CHARITIES = [
@@ -25,15 +25,16 @@ const CHARITIES = [
   },
   {
     description: `
-      Those of you who know Sarah well know how much she loves sharks. Shark
-      Stewards mission is to restore ocean health by saving sharks from
-      overfishing and the shark fin trade, and protecting critical marine
-      habitat through the establishment of marine protected areas and shark
-      sanctuaries.
+      Those of you who know Sarah well know how much she loves sharks. Last
+      summer she had the opportunity to participate in shark research on a boat
+      off the coast of Florida with the Coastal Marine Education and Research
+      Academy (CMERA). This charity was established by the same people. They
+      aim to spread awareness of global marine conservation challenges, and fund
+      further shark research.
     `,
-    logoSrc: sharkStewardsLogo,
-    name: 'Shark Stewards',
-    siteLink: 'http://sharkstewards.org/',
+    logoSrc: cmeraLogo,
+    name: 'The Moore Center For Marine Conservation',
+    siteLink: 'https://mooreconservation.org/',
   },
   {
     description: `
