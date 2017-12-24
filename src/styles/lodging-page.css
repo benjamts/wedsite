@@ -8,6 +8,7 @@
 
 .textAnchor {
     composes: textAnchor from './typography.css';
+    font-size: 16px;
 }
 
 .textBody {
