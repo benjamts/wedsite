@@ -37,8 +37,6 @@
 
 .bodyCopy {
     composes: textBody from './typography.css';
-    margin: 20px 0 0 0;
-    text-align: center;
 }
 
 .sectionHeader {

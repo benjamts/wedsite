@@ -37,8 +37,17 @@ export default (props) => {
         </span>
       </div>
 
+      <h2>Our Story</h2>
       <p className={styles.bodyCopy}>
-        Please help us celebrate our love back in the city where we first met.
+        Sarah and Tyler met back in March of 2012 while attending CU Boulder.
+        Sarah was his boss at the dining hall on campus. They were brought
+        together by friends who forced them to actually be social and go out
+        after work. They quickly became inseperable, aside from a brief period
+        in 2013 when Tyler moved to San Francisco. Sarah followed him a few
+        months later and they've lived there ever since.
+      </p>
+      <p className={styles.bodyCopy}>
+        Please join us back where it all started!
       </p>
     </Base>
   )
