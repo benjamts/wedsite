@@ -12,10 +12,11 @@ import cmeraLogo from '../images/cmera-logo.png'
 const CHARITIES = [
   {
     description: `
-      This is Sarah's ballet company. They are a volunteer company that brings
-      dance performances to senior communities, community centers, and other
-      audiences who ordinarily would not have the opportunity to see a live
-      ballet, modern or jazz performance accompanied by professional musicians.
+      This is Sarah's ballet company. They are a non-profit volunteer company
+      that brings dance performances to senior communities, community centers,
+      and other audiences who ordinarily would not have the opportunity to see
+      a live ballet, modern or jazz performance accompanied by professional
+      musicians.
     `,
     logoSrc: kathyMataLogo,
     name: 'Kathy Mata Ballet',
@@ -77,22 +78,15 @@ export default class RegistryPage extends React.PureComponent {
       <Base>
         <h1 className={styles.header}>Registry</h1>
         <p className={styles.bodyCopy}>
-          We'd appreciate it if you didn't buy us anything for our wedding.
-          (We will, of course, accept any priceless family heirlooms that you've
-          been saving for the occasion.)
+          <b>We'd appreciate it if you didn't buy us anything for our wedding.</b>
         </p>
+        <p className={styles.bodyCopy}>Why?</p>
         <p className={styles.bodyCopy}>
-          We already have all the things we need for our home. We have a
-          coffee table that we dragged in off the street on Sarah's first visit.
-          (At the time Tyler's only furniture was a mattress on the floor and a
-          borrowed air mattress that was doubling as a couch.) We have several
-          sets of mismatched dishes acquired from various sources (mostly
-          friends who no longer needed them are were kind enough to gift them
-          to us). We have a very strange painting of a fox hunt hanging over our
-          fireplace that we found on a street corner half a block away. (Did we
-          mention we've found a lot of great stuff on the street over the
-          years?) We have all our needs covered. Plus, in a small apartment we
-          don't have much room to put more things.
+          We have lived together for a long time now! What we need we’ve
+          purchased or literally found in the street (a coffee table, lamp, rug,
+          and a fox hunt painting to name a few things) We also want to thank
+          our friends who gave us their old mismatched items when they got
+          married and upgraded! We simply don’t feel like upgrading.
         </p>
         <p className={styles.bodyCopy}>
           Instead, please consider donating the money you would have spent on a
@@ -106,6 +100,24 @@ export default class RegistryPage extends React.PureComponent {
         </p>
         <ul className={styles.charityList}>
           {CHARITIES.map(info => <Charity {...info} key={info.name} />)}
+        </ul>
+        <p className={styles.caveatHeader}>We will (of course) be accepting:</p>
+        <ul className={styles.caveatList}>
+          <li>
+            <p className={styles.bodyCopy}>
+              priceless family heirlooms you have been saving for us
+            </p>
+          </li>
+          <li>
+            <p className={styles.bodyCopy}>
+              homemade gifts that you make for all your wedded friends
+            </p>
+          </li>
+          <li>
+            <p className={styles.bodyCopy}>
+              offers to purchase us drinks/dinner out
+            </p>
+          </li>
         </ul>
       </Base>
     )

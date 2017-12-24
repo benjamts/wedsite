@@ -21,7 +21,7 @@
 
 .charityList {
     list-style: none;
-    margin: 0;
+    margin: 0 0 28px 0;
     padding: 0;
 }
 
@@ -60,4 +60,18 @@
 
 .charityName {
     margin-top: 0;
+}
+
+.caveatHeader {
+    composes: bodyCopy;
+    margin-bottom: 0;
+}
+
+.caveatList {
+    margin: 0;
+    padding-left: 28px;
+}
+
+.caveatList .bodyCopy {
+    margin-bottom: 0;
 }
