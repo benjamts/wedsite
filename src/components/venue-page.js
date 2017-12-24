@@ -13,8 +13,8 @@ export default (props) => {
       <p className={styles.bodyCopy}>
         <a
           className={styles.link}
-          href="https://www.chautauqua.com/lodging/map-directions/"
-          target="_blank"
+          href='https://www.chautauqua.com/lodging/map-directions/'
+          target='_blank'
         >The Colorado Chataqua</a> in Boulder, CO.
       </p>
       <p className={styles.bodyCopy}>
@@ -31,8 +31,8 @@ export default (props) => {
       <p className={styles.bodyCopy}>
         After the ceremony we'll move across the lawn to{' '}<a
           className={styles.link}
-          href="https://www.chautauqua.com/dining-hall/overview/"
-          target="_blank"
+          href='https://www.chautauqua.com/dining-hall/overview/'
+          target='_blank'
         >The Chataqua Dining Hall</a> for a night of food, drinks, and dancing.
       </p>
     </Base>

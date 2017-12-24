@@ -8,7 +8,6 @@ import classNames from '../utils/class_names'
 
 import Header from '../components/header'
 
-
 /*
   Closing over this so that transitioning between pages doesn't re-trigger the
   blur animation.

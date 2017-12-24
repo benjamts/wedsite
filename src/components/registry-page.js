@@ -5,11 +5,9 @@ import React from 'react'
 
 import Base from './base-page'
 
-import catPic from '../images/cat.jpg'
-import kathyMataLogo from '../images/kathy-mata-ballet-logo.png';
-import donorsChooseLogo from '../images/donors-choose-logo.png';
-import cmeraLogo from '../images/cmera-logo.png';
-
+import kathyMataLogo from '../images/kathy-mata-ballet-logo.png'
+import donorsChooseLogo from '../images/donors-choose-logo.png'
+import cmeraLogo from '../images/cmera-logo.png'
 
 const CHARITIES = [
   {
@@ -21,7 +19,7 @@ const CHARITIES = [
     `,
     logoSrc: kathyMataLogo,
     name: 'Kathy Mata Ballet',
-    siteLink: 'http://kathymataballet.org/?page_id=370',
+    siteLink: 'http://kathymataballet.org/?page_id=370'
   },
   {
     description: `
@@ -34,7 +32,7 @@ const CHARITIES = [
     `,
     logoSrc: cmeraLogo,
     name: 'The Moore Center For Marine Conservation',
-    siteLink: 'https://mooreconservation.org/',
+    siteLink: 'https://mooreconservation.org/'
   },
   {
     description: `
@@ -46,8 +44,8 @@ const CHARITIES = [
     `,
     logoSrc: donorsChooseLogo,
     name: 'DonorsChoose.org',
-    siteLink: 'https://www.donorschoose.org/',
-  },
+    siteLink: 'https://www.donorschoose.org/'
+  }
 ]
 
 class Charity extends React.PureComponent {
@@ -70,7 +68,7 @@ Charity.propTypes = {
   description: PropTypes.string.isRequired,
   logoSrc: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  siteLink: PropTypes.string.isRequired,
+  siteLink: PropTypes.string.isRequired
 }
 
 export default class RegistryPage extends React.PureComponent {
@@ -101,9 +99,9 @@ export default class RegistryPage extends React.PureComponent {
           gift for us (or just saving it for yourself). There are a few
           suggested groups below, but feel free to find a charity that supports
           a cause that's important to you. (Check out <a
-            href="https://www.charitywatch.org/home"
+            href='https://www.charitywatch.org/home'
           >CharityWatch</a> and <a
-            href="https://www.charitynavigator.org/"
+            href='https://www.charitynavigator.org/'
           >Charity Navigator</a> if you're looking for reputable charities.)
         </p>
         <ul className={styles.charityList}>
