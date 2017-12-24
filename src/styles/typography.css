@@ -78,7 +78,7 @@ a,
     color: default;
     font-family: 'Open Sans','Segoe UI',Tahoma,sans-serif;
     font-style: default;
-    font-size: 16px;
+    font-size: inherit;
     line-height: 1.2;
 }
 
@@ -90,4 +90,9 @@ a,
 .textItalic {
     composes: textBody;
     font-style: italic;
+}
+
+.textSmall {
+    composes: textBody;
+    font-size: smaller;
 }

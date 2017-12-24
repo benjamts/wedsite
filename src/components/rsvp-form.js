@@ -361,6 +361,12 @@ class AttendeeRSVPForm extends React.Component {
             type='submit'
           >{this.state.isSubmitting ? 'Saving...' : 'Save'}</button>
         </div>
+        <p className={styles.textBody}>
+          Having trouble with the form? You can also email <a
+            className={styles.link}
+            href='mailto:rsvp@tylerandsarah.com'
+          >rsvp@tylerandsarah.com</a>
+        </p>
       </form>
     )
   }

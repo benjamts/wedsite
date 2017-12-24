@@ -1,5 +1,13 @@
 @import './colors.css';
 
+.textBody {
+    composes: textSmall from './typography.css';
+}
+
+.link {
+    composes: textAnchor from './typography.css';
+}
+
 .fieldsetLegend {
     composes: textBold from './typography.css';
     margin-bottom: -.5rem;
