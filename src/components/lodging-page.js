@@ -22,9 +22,9 @@ export default (props) => {
         guests to relax and unplug.
       </p>
       <p className={styles.textBody}>
-        Cottages are available in studio, 1, 2 or 3 bedroom configurations each
-        with fully equipped kitchens and screened-in front porches. All
-        accommodations are smoke-free.
+        Cottages are currently available in studio, or 1 bedroom (with pullout couch)
+        configurations, each with fully equipped kitchens and screened-in front
+        porches. All accommodations are smoke-free.
       </p>
       <p className={styles.textBody}>
         The cottages are located on the same site as the ceremony and reception.
