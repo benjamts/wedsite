@@ -22,18 +22,13 @@ export default (props) => {
         guests to relax and unplug.
       </p>
       <p className={styles.textBody}>
-        Cottages are currently available in studio, or 1 bedroom (with pullout couch)
-        configurations, each with fully equipped kitchens and screened-in front
-        porches. All accommodations are smoke-free.
+        Cottages are available in studio, 1, 2 or 3 bedroom configurations each
+        with fully equipped kitchens and screened-in front porches. All
+        accommodations are smoke-free.
       </p>
       <p className={styles.textBody}>
         The cottages are located on the same site as the ceremony and reception.
-        There is a two-night minimum stay. If you are interested in renting a
-        cottage, please email{' '}<a
-          className={styles.textAnchor}
-          href='mailto:cottages@tylerandsarah.com'
-        >cottages@tylerandsarah.com</a>. We have several reserved and you will
-        receive a small discount. First come first served.
+        There is a two-night minimum stay.
       </p>
 
       <h2 className={styles.subheader}>Best Western Plus Boulder Inn{' '}<a
