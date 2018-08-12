@@ -6,7 +6,7 @@ import Base from './base-page'
 import CountdownTimer from './countdown-timer'
 import cutePhoto from '../images/cute-photo-2.jpg'
 
-const ceremonyStart = new Date('Sat, 08 Sep 2018 22:00:00 GMT')
+const ceremonyStart = new Date('Sun, 09 Sep 2018 23:15:00 GMT')
 
 export default (props) => {
   return (
