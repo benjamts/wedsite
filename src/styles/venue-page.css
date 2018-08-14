@@ -6,6 +6,10 @@
     composes: textSubheader from './typography.css';
 }
 
+.subsubheader {
+    composes: textBold from './typography.css';
+}
+
 .bodyCopy {
     composes: textBody from './typography.css';
 }

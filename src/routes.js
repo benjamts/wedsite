@@ -10,7 +10,7 @@ import Lodging from './components/lodging-page'
 import Registry from './components/registry-page'
 import RSVP from './components/rsvp-page'
 import RSVPConfirmation from './components/rsvp-confirmation-page'
-import Venue from './components/venue-page'
+import Schedule from './components/schedule-page'
 
 
 export default (
@@ -21,6 +21,7 @@ export default (
     <Route exact path='/registry' component={Registry} />
     <Route exact path='/rsvp' component={RSVP} />
     <Route exact path='/thanks' component={RSVPConfirmation} />
-    <Route exact path='/venue' component={Venue} />
+    <Route exact path='/venue' component={Schedule} />
+    <Route exact path='/schedule' component={Schedule} />
   </Switch>
 )
