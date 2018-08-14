@@ -8,7 +8,7 @@ export default (props) => {
   return (
     <Base>
       <h1 className={styles.header}>Lodging</h1>
-      <h2 className={styles.subheader}>Chataqua Cottages{' '}<a
+      <h2 className={styles.subheader}>Chautauqua Cottages{' '}<a
         className={styles.textAnchor}
         href='https://www.chautauqua.com/lodging/cottages-lodges/overview/'
         target='_blank'

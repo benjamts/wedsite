@@ -26,7 +26,7 @@ export default (props) => {
       </p>
       <p className={styles.bodyCopy}>
         <b>Dress code:</b> Casual/silly! We have a general appreciation for
-        hawaiian shirts, cat prints, and any clothing bearing our faces.
+        Hawaiian shirts, cat prints, and any clothing bearing our faces.
       </p>
 
       <h2 className={styles.subheader}>The Ceremony</h2>
@@ -36,7 +36,7 @@ export default (props) => {
         target='_blank'
       >The Chautauqua Green</a></h3>
       <p className={styles.bodyCopy}>
-        There will be a short ceremony on The Chataqua Green, an open grassy
+        There will be a short ceremony on The Chautauqua Green, an open grassy
         space in front of the Dining Hall and below the Flatirons.
       </p>
       <p className={styles.bodyCopy}>
@@ -44,7 +44,7 @@ export default (props) => {
           className={styles.link}
           href='https://www.google.com/maps/place/Chautauqua+Dining+Hall/@39.9984481,-105.2828385,17z/data=!3m1!4b1!4m5!3m4!1s0x876bec46fbf536f7:0x152c257e87bf9572!8m2!3d39.998444!4d-105.2806498'
           target='_blank'
-        >The Chataqua Dining Hall</a> for a night of food, drinks, and dancing.
+        >The Chautauqua Dining Hall</a> for a night of food, drinks, and dancing.
       </p>
       <p className={styles.bodyCopy}>
         <b>Dress code:</b> We imagine we'll see a lot of suits and dresses.
