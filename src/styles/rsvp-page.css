@@ -2,6 +2,10 @@
     composes: textHeader from './typography.css';
 }
 
+.link {
+    composes: textAnchor from './typography.css';
+}
+
 .subheader {
     composes: subHeader from './typography.css';
 }
