@@ -12,8 +12,8 @@ export default (props) => {
       <p>
         <b>Just kidding!</b> If you're planning to attend and haven't already
         told us, send an email to <a
-           className={styles.link}
-           href='mailto:rsvp@tylerandsarah.com'
+          className={styles.link}
+          href='mailto:rsvp@tylerandsarah.com'
          >rsvp@tylerandsarah.com</a> containing a list of everyone in your
          party and an apology for making us wait so long. ;)
       </p>
