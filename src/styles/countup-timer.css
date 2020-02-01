@@ -1,17 +1,26 @@
 .timer {
   align-items: flex-start;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 500px;
+}
+
+.unitRow {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  min-width: 215px;
 }
 
 .unitSection {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  flex: 0 1 auto;
+  flex: 1;
   justify-content: flex-start;
 }
 

@@ -22,6 +22,9 @@ export default (props) => {
       </h1>
       <p className={styles.subheader}>
         September 9th, 2018 &bull; Boulder, CO
+      </p>
+      <p className={styles.subheader}>
+        Happily Married For
         <CountupTimer start={ceremonyStart} />
       </p>
       <div className={styles.pictureWall}>
