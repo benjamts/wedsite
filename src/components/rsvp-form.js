@@ -30,11 +30,12 @@ class AdditionalNotes extends React.PureComponent {
           onChange={this.props.onChange}
           placeholder='Food allergies, etc.'
           value={this.props.value}
-         />
+        />
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >Anything else we should know?</label>
+        >Anything else we should know?
+        </label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
@@ -62,7 +63,8 @@ class IsAttending extends React.PureComponent {
           <label
             className={styles.radioInputLabel}
             htmlFor={`${id}True`}
-          >Yes</label>
+          >Yes
+          </label>
 
           <input
             checked={this.props.value === 'false'}
@@ -77,10 +79,12 @@ class IsAttending extends React.PureComponent {
           <label
             className={styles.radioInputLabel}
             htmlFor={`${id}False`}
-          >No</label>
+          >No
+          </label>
           <legend
             className={styles.inputLabel}
-          >Will this person be attending?</legend>
+          >Will this person be attending?
+          </legend>
           <p className={styles.inputError}>{this.props.error}</p>
         </div>
       </div>
@@ -103,11 +107,12 @@ class AttendeeName extends React.PureComponent {
           required
           type='text'
           value={this.props.value}
-         />
+        />
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >Name</label>
+        >Name
+        </label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
@@ -134,14 +139,16 @@ class NumberOfAttendees extends React.PureComponent {
               <option
                 key={n}
                 value={`${n + 1}`}
-              >{n + 1}</option>
+              >{n + 1}
+              </option>
             )
           })}
         </select>
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >How many people are in your party?</label>
+        >How many people are in your party?
+        </label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
@@ -167,7 +174,8 @@ class InviteCode extends React.PureComponent {
         <label
           className={styles.inputLabel}
           htmlFor={id}
-        >What's the code on your invitation?</label>
+        >What's the code on your invitation?
+        </label>
         <p className={styles.inputError}>{this.props.error}</p>
       </div>
     )
@@ -181,19 +189,20 @@ class AttendeeRSVPFields extends React.PureComponent {
       <div className={styles.formFieldset}>
         <legend
           className={styles.fieldsetLegend}
-        >Attendee {this.props.attendeeNumber + 1}</legend>
+        >Attendee {this.props.attendeeNumber + 1}
+        </legend>
         <AttendeeName
           error={this.props.nameError}
           name={`attendee${this.props.attendeeNumber}Name`}
           onChange={this.props.onChange}
           value={this.props.name}
-         />
+        />
         <IsAttending
           error={this.props.isAttendingError}
           name={`attendee${this.props.attendeeNumber}IsAttending`}
           onChange={this.props.onChange}
           value={this.props.isAttending}
-         />
+        />
       </div>
     )
   }
@@ -221,21 +230,21 @@ class AttendeeRSVPForm extends React.Component {
     }
 
     for (let i = 0; i < MAX_ATTENDEES; i++) {
-      for (let fieldName in ATTENDEE_FIELDS) {
+      for (const fieldName in ATTENDEE_FIELDS) {
         this.state[`attendee${i}${fieldName}`] = ''
         this.state[`attendee${i}${fieldName}Error`] = ''
       }
     }
 
-    this.onFieldChange = this.onFieldChange.bind(this)
-    this.submitWithAjax = this.submitWithAjax.bind(this)
+    this.handleFieldChange = this.handleFieldChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   get errorFields () {
     return Object.keys(this.state)
-           .filter(k => k.endsWith('Error'))
-           .filter(k => !k.startsWith('inviteCode'))
-           .filter(k => !k.startsWith('additionalNotes'))
+      .filter(k => k.endsWith('Error'))
+      .filter(k => !k.startsWith('inviteCode'))
+      .filter(k => !k.startsWith('additionalNotes'))
   }
 
   get hasError () {
@@ -268,20 +277,20 @@ class AttendeeRSVPForm extends React.Component {
            this.isMissingRequiredFields
   }
 
-  onFieldChange (e) {
+  handleFieldChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  submitWithAjax (e) {
+  handleSubmit (e) {
     e.preventDefault()
     this.setState({ isSubmitting: true })
 
     const numberOfAttendees = parseInt(this.state.numberOfAttendees, 10)
-    window.fetch(`${API_HOST}/rsvp`, {  // eslint-disable-line no-undef
+    window.fetch(`${API_HOST}/rsvp`, { // eslint-disable-line no-undef
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -296,35 +305,35 @@ class AttendeeRSVPForm extends React.Component {
         additionalNotes: this.state.additionalNotes
       })
     })
-    .then(res => {
-      this.setState({ isSubmitting: false })
-      if (res.ok) {
-        this.props.history.push('/thanks')
-      } else {
-        return Promise.reject(res)
-      }
-    })
-    .catch(res => {
-      if (res.status === 401) {
-        return res.json()
-        .then(err => {
-          this.setState({ inviteCodeError: err.message })
-          document.getElementById('inviteCodeInput').scrollIntoView({
-            behavior: 'smooth'
-          })
-        })
-      }
-    })
+      .then(res => {
+        this.setState({ isSubmitting: false })
+        if (res.ok) {
+          this.props.history.push('/thanks')
+        } else {
+          return Promise.reject(res)
+        }
+      })
+      .catch(res => {
+        if (res.status === 401) {
+          return res.json()
+            .then(err => {
+              this.setState({ inviteCodeError: err.message })
+              document.getElementById('inviteCodeInput').scrollIntoView({
+                behavior: 'smooth'
+              })
+            })
+        }
+      })
   }
 
   render () {
     const numberOfAttendees = parseInt(this.state.numberOfAttendees, 10) || 0
     return (
-      <form onSubmit={this.submitWithAjax}>
+      <form onSubmit={this.handleSubmit}>
         <NumberOfAttendees
           error={this.state.numberOfAttendeesError}
           name='numberOfAttendees'
-          onChange={this.onFieldChange}
+          onChange={this.handleFieldChange}
           value={this.state.numberOfAttendees}
         />
         {range(0, numberOfAttendees).map((x, i) => {
@@ -338,20 +347,20 @@ class AttendeeRSVPForm extends React.Component {
               key={i}
               name={this.state[`attendee${i}Name`]}
               nameError={this.state[`attendee${i}NameError`]}
-              onChange={this.onFieldChange}
+              onChange={this.handleFieldChange}
             />
           )
         }, this)}
         <AdditionalNotes
           error={this.state.additionalNotesError}
-          name={`additionalNotes`}
-          onChange={this.onFieldChange}
+          name='additionalNotes'
+          onChange={this.handleFieldChange}
           value={this.state.additionalNotes}
-         />
+        />
         <InviteCode
           error={this.state.inviteCodeError}
           name='inviteCode'
-          onChange={this.onFieldChange}
+          onChange={this.handleFieldChange}
           value={this.state.inviteCode}
         />
         <div className={styles.formFieldset}>
@@ -359,13 +368,16 @@ class AttendeeRSVPForm extends React.Component {
             className={styles.submitButton}
             disabled={this.shouldDisableSubmit}
             type='submit'
-          >{this.state.isSubmitting ? 'Saving...' : 'Save'}</button>
+          >{this.state.isSubmitting ? 'Saving...' : 'Save'}
+          </button>
         </div>
         <p className={styles.textBody}>
-          Having trouble with the form? You can also email <a
+          Having trouble with the form? You can also email
+          <a
             className={styles.link}
             href='mailto:rsvp@tylerandsarah.com'
-          >rsvp@tylerandsarah.com</a>
+          >rsvp@tylerandsarah.com
+          </a>
         </p>
       </form>
     )

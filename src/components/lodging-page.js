@@ -8,11 +8,17 @@ export default (props) => {
   return (
     <Base>
       <h1 className={styles.header}>Lodging</h1>
-      <h2 className={styles.subheader}>Chautauqua Cottages{' '}<a
-        className={styles.textAnchor}
-        href='https://www.chautauqua.com/lodging/cottages-lodges/overview/'
-        target='_blank'
-      >View</a></h2>
+      <h2
+        className={styles.subheader}
+      >Chautauqua Cottages{' '}
+        <a
+          className={styles.textAnchor}
+          href='https://www.chautauqua.com/lodging/cottages-lodges/overview/'
+          rel='noopener noreferrer'
+          target='_blank'
+        >View
+        </a>
+      </h2>
       <p className={styles.textBody}>
         Since 1898, the Colorado Chautauqua has been hosting visitors seeking
         respite through its quiet, contemplative natural beauty. Each cabin has
@@ -31,20 +37,28 @@ export default (props) => {
         There is a two-night minimum stay.
       </p>
 
-      <h2 className={styles.subheader}>Best Western Plus Boulder Inn{' '}<a
-        className={styles.textAnchor}
-        href='https://www.bestwestern.com/en_US/book/hotel-rooms.06103.html?checkIn=2018-09-08&checkOut=2018-09-10'
-        target='_blank'
-      >Book</a></h2>
+      <h2 className={styles.subheader}>Best Western Plus Boulder Inn{' '}
+        <a
+          className={styles.textAnchor}
+          href='https://www.bestwestern.com/en_US/book/hotel-rooms.06103.html?checkIn=2018-09-08&checkOut=2018-09-10'
+          rel='noopener noreferrer'
+          target='_blank'
+        >Book
+        </a>
+      </h2>
       <p className={styles.textBody}>
         This hotel is a short, easy drive from The Colorado Chautauqua.
       </p>
 
-      <h2 className={styles.subheader}>Hotel Boulderado{' '}<a
-        className={styles.textAnchor}
-        href='http://www.boulderado.com/'
-        target='_blank'
-      >View</a></h2>
+      <h2 className={styles.subheader}>Hotel Boulderado{' '}
+        <a
+          className={styles.textAnchor}
+          href='http://www.boulderado.com/'
+          rel='noopener noreferrer'
+          target='_blank'
+        >View
+        </a>
+      </h2>
       <p className={styles.textBody}>
         The historic Hotel Boulderado is located two blocks from the Pearl
         Street walking mall. It's slightly further from the wedding site, but

@@ -10,7 +10,8 @@ function FooterLink (props) {
       className={styles.link}
       exact
       to={props.to}
-    >{props.children}</NavLink>
+    >{props.children}
+    </NavLink>
   )
 }
 

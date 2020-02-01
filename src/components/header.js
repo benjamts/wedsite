@@ -14,7 +14,8 @@ function HeaderLink (props) {
       className={styles.link}
       exact
       to={props.to}
-    >{props.children}</NavLink>
+    >{props.children}
+    </NavLink>
   )
 }
 HeaderLink.propTypes = {
@@ -78,7 +79,7 @@ export default class Header extends React.Component {
           className={styles.openToggle}
           type='button'
           onClick={this.state.isOpen ? this.close : this.open}
-         />
+        />
       </header>
     )
   }

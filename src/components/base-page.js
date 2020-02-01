@@ -38,7 +38,7 @@ class BasePage extends React.Component {
   }
 
   render () {
-    let bgClasses = classNames(styles.backdrop, {
+    const bgClasses = classNames(styles.backdrop, {
       [styles.loadingImage]: !this.state.preloaded
     })
 
@@ -55,7 +55,7 @@ class BasePage extends React.Component {
           role='img'
           style={{ backgroundImage: `url(${bgImgUrl})` }}
           title='The Flatirons in Boulder, CO'
-         />
+        />
       </div>
     )
   }

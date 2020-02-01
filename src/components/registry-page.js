@@ -92,11 +92,10 @@ export default class RegistryPage extends React.PureComponent {
           Instead, please consider donating the money you would have spent on a
           gift for us (or just saving it for yourself). There are a few
           suggested groups below, but feel free to find a charity that supports
-          a cause that's important to you. (Check out <a
-            href='https://www.charitywatch.org/home'
-          >CharityWatch</a> and <a
-            href='https://www.charitynavigator.org/'
-          >Charity Navigator</a> if you're looking for reputable charities.)
+          a cause that's important to you. (Check out
+          <a href='https://www.charitywatch.org/home'>CharityWatch</a> and
+          <a href='https://www.charitynavigator.org/'>Charity Navigator</a>
+          if you're looking for reputable charities.)
         </p>
         <ul className={styles.charityList}>
           {CHARITIES.map(info => <Charity {...info} key={info.name} />)}

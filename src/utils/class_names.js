@@ -1,18 +1,18 @@
 export default function classNames () {
   let classes = ''
 
-  for (let arg of arguments) {
+  for (const arg of arguments) {
     if (arg === undefined) {
       continue
     }
 
-    let argType = Object.prototype.toString.call(arg)
+    const argType = Object.prototype.toString.call(arg)
 
     if (argType === '[object String]') {
       classes += (' ' + arg)
     } else if (argType === '[object Object]') {
-      for (let key in arg) {
-        if (arg.hasOwnProperty(key) && arg[key]) {
+      for (const key in arg) {
+        if (Object.prototype.hasOwnProperty.call(arg, key) && arg[key]) {
           classes += (' ' + key)
         }
       }
