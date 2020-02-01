@@ -3,7 +3,7 @@ import styles from '../styles/home-page.css'
 import React from 'react'
 
 import Base from './base-page'
-import CountdownTimer from './countdown-timer'
+import CountupTimer from './countup-timer'
 import cutePhoto from '../images/cute-photo-2.jpg'
 
 const ceremonyStart = new Date('Sun, 09 Sep 2018 23:15:00 GMT')
@@ -22,7 +22,7 @@ export default (props) => {
       </h1>
       <p className={styles.subheader}>
         September 9th, 2018 &bull; Boulder, CO
-        <CountdownTimer end={ceremonyStart} />
+        <CountupTimer start={ceremonyStart} />
       </p>
       <div className={styles.pictureWall}>
         <span

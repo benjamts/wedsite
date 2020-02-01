@@ -5,7 +5,7 @@ import React from 'react'
 
 import diffDates from '../utils/diff-dates'
 
-class CountdownTimer extends React.PureComponent {
+class CountupTimer extends React.PureComponent {
   constructor (props) {
     super(props)
     this.state = {
@@ -19,7 +19,7 @@ class CountdownTimer extends React.PureComponent {
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     this.tickInterval = window.setInterval(this.tick, 500)
   }
 
@@ -28,7 +28,7 @@ class CountdownTimer extends React.PureComponent {
   }
 
   render () {
-    const dateDiff = diffDates(this.state.now, this.props.end)
+    const dateDiff = diffDates(this.props.start, this.state.now)
 
     return (
       <span className={styles.timer}>
@@ -52,8 +52,8 @@ class CountdownTimer extends React.PureComponent {
     )
   }
 }
-CountdownTimer.propTypes = {
-  end: PropTypes.instanceOf(Date).isRequired
+CountupTimer.propTypes = {
+  start: PropTypes.instanceOf(Date).isRequired
 }
 
-export default CountdownTimer
+export default CountupTimer
