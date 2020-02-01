@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const DefinePlugin = require('webpack').DefinePlugin;
@@ -7,6 +7,7 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 
 const cssName = PRODUCTION ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]';
 const config = {
+  mode: PRODUCTION ? 'production' : 'development',
   entry: ['babel-polyfill', './index.js'],
 
   output: {
@@ -41,12 +42,19 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            `css-loader?modules&importLoaders=1&localIdentName=${cssName}&minimize=true`,
-            'postcss-loader',
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: cssName,
+              },
+            }
+          },
+          'postcss-loader',
+        ]
       },
     ]
   },
@@ -60,10 +68,9 @@ const config = {
       PRODUCTION: JSON.stringify(PRODUCTION),
       API_HOST: JSON.stringify(PRODUCTION ? 'https://api.tylerandsarah.com' : 'http://localhost:3000'),
     }),
-    new ExtractTextPlugin({
-      allChunks: true,
+    new MiniCssExtractPlugin({
       filename: '[hash].css',
-      ignoreOrder: false,
+      ignoreOrder: true,
     }),
     new StaticSiteGeneratorPlugin({
       crawl: true,

@@ -1,13 +1,13 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "targets": {
         "browsers": ["last 2 versions", "safari >= 7"]
       }
     }]
   ],
   "plugins": [
-    ["transform-runtime"],
-    ["transform-react-jsx"]
+    ["@babel/plugin-transform-runtime"],
+    ["@babel/plugin-transform-react-jsx"]
   ]
 }
